@@ -1,5 +1,5 @@
 # Compressor Image Algorithm
-This project is a web application that leverages Python for the backend, managed by James Njeru, and JavaScript with React.js for the frontend, spearheaded by David Njoroge. 
+This project is a web application that leverages Python for the backend, managed by [James Njeru](https://github.com/Mu-Gee) and JavaScript with React.js for the frontend, spearheaded by [David Njoroge](https://github.com/Ndegwadavid)
 
 The collaboration between these technologies results in a powerful and responsive user interface, offering seamless interaction with the application.
 
