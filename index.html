@@ -10,17 +10,27 @@
     <div id="sideMenu">
         <button id="closeBtn" onclick="closeSideMenu()">X</button>
         <!-- Add your navigation links here -->
-        <a href="#">JPEG</a>
-        <a href="#">JPG</a>
-        <a href="#">GIPH</a>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
     </div>
 
     <div id="mainContent">
-        <button id="openBtn" onclick="openSideMenu()">menu</button>
+        <button id="openBtn" onclick="openSideMenu()">Open Menu</button>
 
         <div id="dropArea" ondrop="dropHandler(event)" ondragover="dragOverHandler(event)">
             <p>Drag and drop an image file here, or</p>
             <input type="file" id="fileInput" accept="image/*" onchange="handleFile()">
+        </div>
+
+        <div id="preview" style="display: none;">
+            <p>Preview:</p>
+            <img id="previewImage" alt="Preview">
+        </div>
+
+        <div id="progressContainer" style="display: none;">
+            <p>Compression Progress:</p>
+            <div id="progressBar"></div>
         </div>
 
         <button onclick="compressImage()">Compress Image</button>

@@ -11,9 +11,17 @@ function closeSideMenu() {
 function handleFile() {
     const fileInput = document.getElementById('fileInput');
     const dropArea = document.getElementById('dropArea');
+    const preview = document.getElementById('preview');
+    const previewImage = document.getElementById('previewImage');
 
     if (fileInput.files.length > 0) {
-        dropArea.innerHTML = `<p>File selected: ${fileInput.files[0].name}</p>`;
+        const selectedFile = fileInput.files[0];
+
+        // Display the preview
+        preview.style.display = 'block';
+        previewImage.src = URL.createObjectURL(selectedFile);
+
+        dropArea.innerHTML = `<p>File selected: ${selectedFile.name}</p>`;
     }
 }
 
@@ -29,9 +37,38 @@ function dragOverHandler(event) {
 
 function compressImage() {
     // Add image compression logic here
-    // For simplicity, let's assume image compression is handled on the server side
-    // and return a compressed image link for download
-    const downloadLink = document.getElementById('downloadLink');
-    downloadLink.style.display = 'block';
-    downloadLink.href = 'path_to_compressed_image.jpg';
+    // For simplicity, let's simulate a delay and update the progress bar
+    showProgress();
+
+    let progress = 0;
+    const interval = setInterval(() => {
+        progress += 10;
+        updateProgressBar(progress);
+
+        if (progress === 100) {
+            clearInterval(interval);
+            const compressedImageUrl = 'path_to_compressed_image.jpg';
+            showPreview(compressedImageUrl);
+
+            // Display the download link
+            const downloadLink = document.getElementById('downloadLink');
+            downloadLink.href = compressedImageUrl;
+            downloadLink.style.display = 'block';
+        }
+    }, 500);
+}
+
+function showPreview(url) {
+    const previewImage = document.getElementById('previewImage');
+    previewImage.src = url;
+    document.getElementById('preview').style.display = 'block';
+}
+
+function showProgress() {
+    document.getElementById('progressContainer').style.display = 'block';
+}
+
+function updateProgressBar(percentage) {
+    const progressBar = document.getElementById('progressBar');
+    progressBar.style.width = percentage + '%';
 }

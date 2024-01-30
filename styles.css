@@ -66,3 +66,27 @@ background: #6c5ed9;
 box-shadow:  50px 50px 100px #5046a1,
              -50px -50px 100px #8876ff;
 }
+/* Existing styles remain unchanged */
+
+#preview {
+    margin-top: 20px;
+}
+
+#previewImage {
+    max-width: 100%;
+    max-height: 200px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+#progressContainer {
+    margin-top: 20px;
+}
+
+#progressBar {
+    width: 0;
+    height: 20px;
+    background-color: #4CAF50;
+    border-radius: 8px;
+    transition: width 0.3s;
+}
