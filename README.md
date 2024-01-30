@@ -45,7 +45,11 @@ Navigate to the project directory: cd Compressor
 
 Install dependencies: 
 ---
-    npm install (for frontend) and pip install -r requirements.txt (for backend)
+    npm install (for frontend)
+--- 
+and 
+---
+    pip install -r requirements.txt (for backend)
 ---
 ### Usage
 Start the backend server: 
